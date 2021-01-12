@@ -36,11 +36,11 @@ defmodule CloudWatch do
     path1
   end
 
-  def shortest_path(path1, path2) do
-    if length(path1) < length(path2) do
-      path1
-    end
+  def shortest_path(path1, path2) when length(path1) <= length(path2) do
+    path1
+  end
 
+  def shortest_path(path1, path2) when length(path2) < length(path1) do
     path2
   end
 
