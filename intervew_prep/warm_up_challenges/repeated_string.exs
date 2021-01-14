@@ -10,7 +10,7 @@ defmodule Solution do
   def count(str, n, char) do
     c = find_char_count(str, char)
     l = floor(n / String.length(str))
-    remainder = find_char_count(remainder_string(String.graphemes(str), n), char)
+    remainder = String.graphemes(str) |> remainder_string(n) |> find_char_count(char)
 
     c * l + remainder
   end
